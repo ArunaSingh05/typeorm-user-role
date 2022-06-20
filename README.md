@@ -1,1 +1,9 @@
 # typeorm-user-role
+
+* `SECRET_KEY`=
+* `DATABASE_PORT`=
+* `APP_PORT`=
+* `DATABASE_HOST`=
+* `DATABASE_NAME`=
+* `DATABASE_USER`=
+* `DATABASE_PASSWORD`= 
