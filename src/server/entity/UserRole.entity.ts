@@ -1,11 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from "typeorm";
+
 import Permissions from "./Permissions.entity";
 import Roles from "./Roles.entity";
 import User from "./User.entity";
 
 @Entity('user_roles')
 class UserRole {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
@@ -23,7 +24,6 @@ class UserRole {
   @UpdateDateColumn()
   updated_at: Date;
 
-  // Many User have one role
   @ManyToOne(() => User, user => user.userRoles)
   @JoinColumn({ name: 'user_id' })
   user: User;

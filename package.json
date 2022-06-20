@@ -2,10 +2,10 @@
   "name": "user-role-management-node-typeorm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "src/server/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ts-node index.ts",
+    "start": "nodemon  src/server/index.ts",
     "typeorm": "typeorm-ts-node-commonjs"
   },
   "repository": {

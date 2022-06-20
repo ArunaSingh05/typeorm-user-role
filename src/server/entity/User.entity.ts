@@ -4,13 +4,20 @@ import UserRole from "./UserRole.entity";
 
 @Entity('users')
 class User {
-  @PrimaryGeneratedColumn('increment')
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    type: 'varchar',
+    length: 200
+  })
   name: string;
 
-  @Column()
+  @Column({
+    type: 'varchar',
+    length: 200,
+    unique: true
+  })
   email: string;
 
   @OneToMany(() => UserRole, userRole => userRole.user, {

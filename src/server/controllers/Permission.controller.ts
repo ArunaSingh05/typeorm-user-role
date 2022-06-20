@@ -11,27 +11,25 @@ export default class PermissionController {
       name: req.body.name
     } as any;
     const resources = await this.entityService?.create(entity);
-    res.json({ 'createPermission': resources });
-  }
-  async getPermissionById(req: Request, res: Response, next: any) {
-    const resources = await this.entityService?.getByID(req.params.roleId);
     res.json(resources);
   }
-
+  async getPermissionById(req: Request, res: Response, next: any) {
+    const resources = await this.entityService?.getByID(req.params.permId);
+    res.json(resources);
+  }
   async getPermissions(req: Request, res: Response, next: any) {
     const resources = await this.entityService?.get();
     res.json(resources);
   }
-
   async updatePermission(req: Request, res: Response, next: any) {
     const entity = {
-      permissions: req.body.role
+      name: req.body.name
     } as any;
-    const resources = await this.entityService?.updateByID(entity, req.params.roleId);
+    const resources = await this.entityService?.updateByID(entity, req.params.permId);
     res.json(resources);
   }
   async deletePermission(req: Request, res: Response, next: any) {
-    const resources = await this.entityService?.deleteByID(req.params.roleId);
+    const resources = await this.entityService?.deleteByID(req.params.permId);
     res.json(resources);
   }
 }
